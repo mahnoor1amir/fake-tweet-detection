@@ -1,0 +1,8 @@
+{
+  "name": "fake-tweet-detection",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "fdff9077"
+}
