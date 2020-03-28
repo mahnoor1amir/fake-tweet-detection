@@ -1,3 +1,37 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+ion-content ion-header {
+  position: fixed;
+  top: 150px;
+  left: 0px;
+  bottom: 0;
+  width: 100%;
+  font-size: large;
+  text-align: center;
+  color: rgb(86, 190, 255);
+}
+ion-content ion-header ion-icon{
+  position: fixed;
+  top: 250px;
+  left: 700px;
+  bottom: 0;
+}
+
+ion-content ion-header ion-title.large-title{
+  font-size: 64px;
+  width: 100%;
+
+  color: lightskyblue;
+}
+/* 
+ion-label {
+  font-size: 64px;
+} */
+
+/* 
+ion-icon {
+  font-size: 64px;
+}
+*/
