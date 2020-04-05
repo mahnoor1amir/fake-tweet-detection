@@ -3,7 +3,7 @@ ion-content ion-toolbar {
 }
 
 ion-content ion-header {
-  position: fixed;
+  position: absolute;
   top: 150px;
   left: 0px;
   bottom: 0;
@@ -13,25 +13,19 @@ ion-content ion-header {
   color: rgb(86, 190, 255);
 }
 ion-content ion-header ion-icon{
-  position: fixed;
   top: 250px;
-  left: 700px;
+  left: 665px;
   bottom: 0;
 }
 
 ion-content ion-header ion-title.large-title{
   font-size: 64px;
   width: 100%;
-
   color: lightskyblue;
 }
-/* 
-ion-label {
-  font-size: 64px;
-} */
 
-/* 
-ion-icon {
-  font-size: 64px;
+ion-content ion-button{
+  position: fixed;
+  right: 50px;
+  width: 5%;
 }
-*/

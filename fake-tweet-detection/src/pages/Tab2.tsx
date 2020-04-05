@@ -1,22 +1,30 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Tab2.css';
+import { IonContent, IonCardHeader, IonPage, IonTitle, IonCard,
+   IonButton, IonIcon, IonCardTitle, IonCardContent } from '@ionic/react';
 import { albumsOutline } from 'ionicons/icons';
+
+import './Tab2.css';
 
 const Tab2: React.FC = () => {
   return (
     <IonPage>
-      
       <IonContent>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonButton color="secondary" shape="round" expand="full"> Verify Another Tweet
-        <IonIcon slot="end" icon={albumsOutline} ></IonIcon>
-      </IonButton>
+
+        <IonCard>
+          <IonIcon icon='checkmark-circle-outline'>Test</IonIcon>
+          <IonCardHeader>
+            <IonCardTitle></IonCardTitle>
+          </IonCardHeader>
+          <IonCardContent>
+            Keep close to Nature's heart... and break clear away, once in awhile,
+            and climb a mountain or spend a week in the woods. Wash your spirit clean.
+          </IonCardContent>
+        </IonCard>
+        
+        <IonButton id='verify' color="secondary" shape="round" expand="full" > 
+          Verify Another Tweet
+          <IonIcon slot="end" icon={albumsOutline} ></IonIcon>
+        </IonButton>
         
       </IonContent>
     </IonPage>

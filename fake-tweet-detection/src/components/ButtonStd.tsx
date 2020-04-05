@@ -1,20 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ButtonStd.css';
-import { IonButton, IonIcon, IonContent } from '@ionic/react';
-import { star, cameraOutline, imageOutline } from 'ionicons/icons';
+import { IonButton, IonIcon, IonContent, IonActionSheet} from '@ionic/react';
+import { star, cameraOutline, imageOutline, close } from 'ionicons/icons';
 
-export const ButtonStd: React.FC = () => (
+export const ButtonStd: React.FC = () => {
 
-  <IonContent>
- 
-    {/*-- Final --*/}
-    <IonButton id="top_container" color="secondary" shape="round" expand="full"> Take Photo
-        <IonIcon slot="end" icon={cameraOutline} ></IonIcon>
-    </IonButton>
-    <IonButton id="bottom"color="secondary" shape="round" expand="full"> Upload Photo
-        <IonIcon slot="end" icon={imageOutline} ></IonIcon>
-    </IonButton>
-  </IonContent>
- 
-  
-);
+  const [showActionSheet, setShowActionSheet] = useState(false);
+
+  return (
+    <IonContent>
+      <IonButton shape='round' onClick={() => setShowActionSheet(true)} expand="block" color='secondary' >
+        Verify Tweet
+      </IonButton>
+      <IonActionSheet
+        isOpen={showActionSheet}
+        onDidDismiss={() => setShowActionSheet(false)}
+        buttons={[{
+          text: 'Take a picture',
+          role: 'destructive',
+          icon: cameraOutline,
+          handler: () => {
+            console.log('Delete clicked');
+          }
+        }, {
+          text: 'Upload Tweet',
+          icon: star,
+          handler: () => {
+            console.log('Share clicked');
+          }
+        },
+        {
+          text: 'Cancel',
+          icon: close,
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }]}
+      >
+      </IonActionSheet>
+    </IonContent>
+
+  );
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

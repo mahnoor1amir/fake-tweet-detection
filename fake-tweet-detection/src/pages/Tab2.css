@@ -1,3 +1,20 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+/*
+Dont touvh this shit it somehow fucks w everything in the other tabs
+ion-content ion-button #verify {
+  position: fixed;
+  left: 395px;
+  width: 45%;
+}
+*/
+
+ion-content ion-card {
+  position: fixed;
+  left: 15%;
+  right: 15%;
+  width: 70%;
+  height: 80%;
+}
