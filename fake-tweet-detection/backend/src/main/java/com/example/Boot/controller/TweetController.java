@@ -16,6 +16,7 @@ public class TweetController {
     String handle;
     String date;
     String tweetBody;
+    String data;
 
     @Autowired
     private TweetService tweetService;
@@ -35,9 +36,10 @@ public class TweetController {
         //emptying the list
         tweetService.deleteALL();
         file = input.getFileName();
-        handle = OCR.run(file,0);
-        date = OCR.run(file,2);
-        tweetBody = OCR.run(file,1);
+        data = OCR.run(file);
+        date = data[2];
+        tweetBody = data[1];
+        handle = data[0];
         Tweet tweet = new Tweet(handle, date, tweetBody);
         tweetService.addTweet(tweet);
         return tweetService.getTweet();
