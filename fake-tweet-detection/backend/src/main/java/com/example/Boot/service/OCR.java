@@ -29,7 +29,7 @@ public class OCR {
     private static final String uriBase = endpoint +
             "vision/v2.1/ocr";
 
-    public static String run(String fileName, int tweetObject) {
+    public static String[] run(String fileName) {
         final CloseableHttpClient httpClient = HttpClientBuilder.create().build();
 
         try {
@@ -62,7 +62,7 @@ public class OCR {
                 final JSONObject json = new JSONObject(jsonString);
 
                 object = parse(json.toString(2));
-                type = object[tweetObject];
+                
 
             } else {
                 return null;
@@ -72,7 +72,7 @@ public class OCR {
             // Display error message.
             System.out.println(e.getMessage());
         }
-        return type;
+        return object;
     }
 
 
