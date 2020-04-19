@@ -16,7 +16,7 @@ public class TweetController {
     String handle;
     String date;
     String tweetBody;
-    String data;
+    String data[];
 
     @Autowired
     private TweetService tweetService;
