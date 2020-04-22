@@ -1,0 +1,5 @@
+.firstCard ion-content ion-card{
+    overflow: hidden;
+    position: relative;
+    margin: 1;
+}

@@ -15,7 +15,7 @@ export const HelpPopover: React.FC = () => {
         <p>Help info whatever whe decide to put in offically</p>
       </IonPopover>
       
-      <IonButton shape='round' size="large" id='helpPop' color='secondary' onClick={() => setShowPopover(true)} >
+      <IonButton shape='round' size="large" class='helpPop' color='secondary' onClick={() => setShowPopover(true)} >
         <IonIcon icon={ helpCircleOutline } size="large" ></IonIcon>
       </IonButton>
     </>

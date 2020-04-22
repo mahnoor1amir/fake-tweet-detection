@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import './ButtonStd.css';
 import { IonButton, IonIcon, IonContent, IonActionSheet} from '@ionic/react';
 import { star, cameraOutline, imageOutline, close } from 'ionicons/icons';
+import './VerifyAnother.css';
 
-export const ButtonStd: React.FC = () => {
+export const VerifyAnother: React.FC = () => {
 
   const [showActionSheet, setShowActionSheet] = useState(false);
 
   return (
     <IonContent>
-      <IonButton shape='round' onClick={() => setShowActionSheet(true)} expand="block" color='secondary' >
-        Verify Tweet
+
+      <IonButton class='another' id='another' shape='round' onClick={() => setShowActionSheet(true)} expand="block" color='secondary' >
+        Verify Another Tweet
       </IonButton>
+
       <IonActionSheet
         isOpen={showActionSheet}
         onDidDismiss={() => setShowActionSheet(false)}
@@ -39,7 +41,10 @@ export const ButtonStd: React.FC = () => {
         }]}
       >
       </IonActionSheet>
+
     </IonContent>
 
   );
+
 }
+

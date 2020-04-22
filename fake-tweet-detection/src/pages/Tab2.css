@@ -1,5 +1,5 @@
-ion-content ion-toolbar {
-  --background: translucent;
+ion-content .results #results {
+  height: 75%;
 }
 
 /*
@@ -12,9 +12,10 @@ ion-content ion-button #verify {
 */
 
 ion-content ion-card {
-  position: fixed;
+  position: relative;
   left: 15%;
   right: 15%;
   width: 70%;
   height: 80%;
+  overflow: hidden;
 }
