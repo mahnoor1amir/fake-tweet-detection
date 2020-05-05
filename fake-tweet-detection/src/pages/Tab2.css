@@ -1,3 +1,11 @@
 ion-content ion-toolbar {
   --background: translucent;
 }
+
+
+div #verifyAnother{
+  position:absolute;
+  top: 50%;
+  right: 30%;
+
+}

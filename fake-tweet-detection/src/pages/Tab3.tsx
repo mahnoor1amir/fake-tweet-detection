@@ -1,7 +1,15 @@
-import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React, {useState} from 'react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonButton, IonIcon } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
+import { logoTwitter, cameraOutline, imageOutline } from 'ionicons/icons';
+
+//let takePhoto = p => (usePhotoGallery(), null)
+// function getPhotoFunction() {
+//   let {photos,takePhoto} = usePhotoGallery()
+//   takePhoto()
+//   return photos
+// }
 
 const Tab3: React.FC = () => {
   return (
@@ -13,14 +21,21 @@ const Tab3: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
-          </IonToolbar>
+          
         </IonHeader>
+
         <ExploreContainer name="Tab 3 page" />
       </IonContent>
+      <IonButton id="top_container" color="secondary" shape="round" expand="full" > Take Photo 
+      
+               <IonIcon slot="end" icon={cameraOutline} ></IonIcon>
+        </IonButton>
     </IonPage>
   );
 };
 
 export default Tab3;
+
+//      <IonButton id="top_container" color="secondary" shape="round" expand="full" onClick={() => takePhoto()}> Take Photo 
+// const { photos, takePhoto } = usePhotoGallery();
+// const [photoToDelete, setPhotoToDelete] = useState<Photo>();

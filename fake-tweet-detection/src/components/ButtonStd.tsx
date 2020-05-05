@@ -2,6 +2,9 @@ import React from 'react';
 import './ButtonStd.css';
 import { IonButton, IonIcon, IonContent } from '@ionic/react';
 import { star, cameraOutline, imageOutline } from 'ionicons/icons';
+import { IonHeader, IonPage, IonTitle, IonToolbar, 
+  IonFab, IonFabButton, IonGrid, IonRow, 
+  IonCol, IonImg, IonActionSheet } from '@ionic/react';
 
 export const ButtonStd: React.FC = () => (
 

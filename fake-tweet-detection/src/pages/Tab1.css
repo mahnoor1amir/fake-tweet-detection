@@ -2,36 +2,44 @@ ion-content ion-toolbar {
   --background: translucent;
 }
 
-ion-content ion-header {
+ion-content ion-title{
   position: fixed;
-  top: 150px;
-  left: 0px;
+  top: 10px;
   bottom: 0;
   width: 100%;
-  font-size: large;
+  font-size: 75px;
+  font-weight: bold;
   text-align: center;
   color: rgb(86, 190, 255);
 }
-ion-content ion-header ion-icon{
+ion-content #fake{
+  position: fixed;
+  bottom: 400px;
+}
+ion-content #tweet{
+  position: fixed;
+  bottom: 200px;
+}
+ion-content #app{
+  position: fixed;
+  top: 200px;
+}
+div #twitter-logo{
+  font-size: 64px;
+  
+  text-align: center;
+}
+/* ion-content ion-header ion-icon{
   position: fixed;
   top: 250px;
   left: 700px;
   bottom: 0;
-}
+} */
 
 ion-content ion-header ion-title.large-title{
-  font-size: 64px;
+  font-size: 100px;
   width: 100%;
 
   color: lightskyblue;
 }
-/* 
-ion-label {
-  font-size: 64px;
-} */
 
-/* 
-ion-icon {
-  font-size: 64px;
-}
-*/
