@@ -1,5 +1,5 @@
 {
-  "appId": "io.ionic.fakeTweetDetection",
+  "appId": "io.ionic.faketweetdetection",
   "appName": "fake-tweet-detection",
   "bundledWebRuntime": false,
   "npmClient": "npm",
