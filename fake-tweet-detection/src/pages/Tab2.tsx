@@ -1,8 +1,7 @@
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon,IonCard,IonItem,IonLabel, IonRouterOutlet } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent,  IonPage,  IonButton, IonIcon,IonRouterOutlet } from '@ionic/react';
 import './Tab2.css';
-import { albumsOutline, logoTwitter } from 'ionicons/icons';
+import { albumsOutline} from 'ionicons/icons';
 import BackendApp from '../components/BackendApp';
 import { Redirect, Route } from 'react-router-dom';
 import Tab1 from './Tab1';
@@ -19,7 +18,8 @@ const Tab2: React.FC = () => {
       
       <IonContent>
         
-      <div className="container">
+      <div id="container">
+    
         <BackendApp />
         
       </div>

@@ -4,8 +4,20 @@ ion-content ion-toolbar {
 
 
 div #verifyAnother{
-  position:absolute;
+  position:fixed;
   top: 50%;
-  right: 30%;
+  right: 25%;
+  left: 25%;
+  text-align: center;
+
+}
+
+div #container{
+    position: fixed;
+    top: 50%;
+    width:100%;
+    right: 40%;
+    left: 30%;
+    text-align: center;
 
 }

@@ -1,10 +1,7 @@
 import React, {useState, Component} from 'react';
-import { IonContent, IonRouterOutlet, IonHeader, IonPage, IonTitle, IonToolbar, IonButton, IonIcon, IonCard, IonItem, IonLabel, IonCardContent, 
-IonFabButton} from '@ionic/react';
-import { ButtonExample } from '../components/ButtonExample';
-import { ButtonStd } from '../components/ButtonStd';
-import { TitleCard } from '../components/TitleCard';
-import { logoTwitter, cameraOutline, imageOutline } from 'ionicons/icons';
+import { IonContent, IonRouterOutlet, IonHeader, IonPage, IonTitle, IonButton, IonIcon} from '@ionic/react';
+
+import { logoTwitter, cameraOutline, imageOutline, checkmarkDoneOutline, earthOutline } from 'ionicons/icons';
 import axios from 'axios';
 import { Redirect, Route } from 'react-router-dom';
 import Tab2 from './Tab2';
@@ -100,8 +97,10 @@ class Tab1 extends Component{
           <IonIcon slot="end" icon={imageOutline} ></IonIcon>
         </IonButton>
         <IonButton id="top_container" color="secondary" shape="round" expand="full"  onClick = {this.handleSubmit} href="/tab2"> Submit 
-      
-               <IonIcon slot="end" icon={cameraOutline} ></IonIcon>
+               <IonIcon slot="end" icon={earthOutline} ></IonIcon>
+        </IonButton>
+        <IonButton id="top_container" color="secondary" shape="round" expand="full"   href="/tab2"> See Results 
+               <IonIcon slot="end" icon={checkmarkDoneOutline} ></IonIcon>
         </IonButton>
 
     </IonPage>

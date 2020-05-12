@@ -18,11 +18,15 @@ ion-content #fake{
 }
 ion-content #tweet{
   position: fixed;
-  bottom: 200px;
+  bottom: 290px;
+}
+ion-content #detection{
+  position: fixed;
+  bottom: 180px;
 }
 ion-content #app{
   position: fixed;
-  top: 200px;
+  bottom: 70px;
 }
 div #twitter-logo{
   font-size: 64px;

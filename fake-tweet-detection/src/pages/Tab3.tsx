@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,IonButton, IonIcon } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
 import './Tab3.css';
 import { logoTwitter, cameraOutline, imageOutline } from 'ionicons/icons';
 

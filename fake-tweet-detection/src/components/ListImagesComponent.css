@@ -3,7 +3,8 @@ table{
     font-size:40px;
     text-align: center;
     bottom: 100px;
-    right:180px;
+    margin-left:auto; 
+    margin-right:auto;
     border-collapse:separate; 
     border-spacing: 0 15px; 
 }
