@@ -23,7 +23,6 @@ const Tab3: React.FC = () => {
           
         </IonHeader>
 
-        <ExploreContainer name="Tab 3 page" />
       </IonContent>
       <IonButton id="top_container" color="secondary" shape="round" expand="full" > Take Photo 
       

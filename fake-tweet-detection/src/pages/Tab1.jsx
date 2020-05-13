@@ -8,7 +8,7 @@ import Tab2 from './Tab2';
 import './Tab1.css';
 
 import hocify from '../hooks/hocify.js';
-import { usePhotoGallery } from '../hooks/usePhotoGallery';
+import usePhotoGallery from '../hooks/usePhotoGallery';
 import TakePhotoClass from '../components/TakePhotoClass';
 
 const CUSTOMER = 'mamir'
@@ -16,27 +16,42 @@ const BASE_API_URL = 'http://localhost:8080'
 const CUSTOMER_API_URL = `${BASE_API_URL}/data/${CUSTOMER}`
 const SEND_API_URL = `${CUSTOMER_API_URL}/images/`
 
+const withPhotoGallery = hocify(usePhotoGallery);
 
 
 class Tab1 extends Component{
 
+  constructor(props) {
+    super(props)
+
+    this.handlePhotoChange = this.handlePhotoChange.bind(this)
+  }
   state = {
     title: 'default',
     content: '',
     image: null,
-    submit: true
+    submit: true,
+    photos: null
   };
   
-
+  componentDidUpdate(prevProps) {
+      // Typical usage (don't forget to compare props):
+      if (this.props.photos !== prevProps.photos) {
+        this.setState({
+          image:this.props.photos[0]
+        })
+      }
+    }
   handleChange = (e) => {
-    // const { takePhoto, photos } = usePhotoGallery();
-    // photos= takePhoto();
+    
     this.setState({
       [e.target.id]: e.target.value
-    })
+    });
     this.setState(prevState => ({
       submit: !prevState.submit
     }));
+ 
+   
     
   };
 
@@ -44,6 +59,18 @@ class Tab1 extends Component{
     this.setState({
       image: e.target.files[0]
     })
+   
+  };
+  
+    //     this.fetchData(this.props.photos);
+    //   }
+  handlePhotoChange = (photos) => {
+    debugger;
+    // if (this.state.photos !== e.target.photos) {
+    //   this.setState({
+    //     image: e.target.photos
+    //   })
+    // }
   };
 
   handleSubmit = (e) => {
@@ -65,7 +92,10 @@ class Tab1 extends Component{
         })
         .catch(err => console.log(err))        
   };
+
   render() {
+    const { photos, takePhoto} = this.props;
+    debugger;
     return(
     <IonPage>
      <IonRouterOutlet>
@@ -84,10 +114,12 @@ class Tab1 extends Component{
       <div id="twitter-logo">
           <IonIcon  size="large" icon={logoTwitter} color="secondary"  />
           </div>
-      <IonButton id="top_container" color="secondary" shape="round" expand="full" >  
-      <TakePhotoClass />
+
+      <IonButton onClick={() => takePhoto()}id="top_container" color="secondary" shape="round" expand="full" >  Take Photo
+      
                <IonIcon slot="end" icon={cameraOutline} ></IonIcon>
-        </IonButton>
+      </IonButton>
+
         <IonButton id="bottom"color="secondary" shape="round" expand="full" href="/tab2"> 
         
             <input type="file"
@@ -96,6 +128,7 @@ class Tab1 extends Component{
           
           <IonIcon slot="end" icon={imageOutline} ></IonIcon>
         </IonButton>
+
         <IonButton id="top_container" color="secondary" shape="round" expand="full"  onClick = {this.handleSubmit} href="/tab2"> Submit 
                <IonIcon slot="end" icon={earthOutline} ></IonIcon>
         </IonButton>
@@ -107,49 +140,7 @@ class Tab1 extends Component{
   );
     }
 }
-export default Tab1;
-
-        // AppDataService.sendImages(CUSTOMER)//HARDCODED
-        //     .then(
-        //         response => {
-        //             console.log(response);
-                    
-        //         }
-        //     )
-////<ButtonStd></ButtonStd>
-//      <TitleCard></TitleCard>
-//<ExploreContainer name="Fake Tweet Detection App" />
-{/* <IonTitle size="large" color="blue">Fake Tweet Detection 
-        <IonIcon  size="large" icon={ logoTwitter }></IonIcon>
-      </IonTitle> */}
-      
-
-      //  const { takePhoto, photos } = usePhotoGallery();;
-      //      <IonButton id="top_container" color="secondary" shape="round" expand="full" onClick={() => takePhoto()}> Take Photo          <IonIcon slot="end" icon={cameraOutline} ></IonIcon>
+export default withPhotoGallery(Tab1);
 
 
-
-      // handleSubmit = (e) => {
-      //   e.preventDefault();
-      //   console.log(this.state);
-      //   let form_data = new FormData();
-      //   form_data.append('image', this.state.image, this.state.image.name);
-      //   form_data.append('title', this.state.title);
-      //   form_data.append('content', this.state.content);
-      //   let url = SEND_API_URL;
-      //   axios.post(url, form_data, {
-      //     headers: {
-      //       'content-type': 'multipart/form-data'
-      //     }
-      //   })
-      //       .then(res => {
-      //         console.log(res.data);
-      //       })
-      //       .catch(err => console.log(err))
-      // };
-
-      // , {
-      //   headers: {
-      //     'content-type': 'multipart/form-data'
-      //   }
-      // }
+//<TakePhotoClass  handlePhotoChange = {this.handlePhotoChange}/>

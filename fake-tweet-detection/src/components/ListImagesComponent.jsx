@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AppDataService from '../service/AppDataService';
-import { IonContent, IonHeader, IonPage, IonTitle, IonIcon,IonCard,IonItem,IonLabel, IonRouterOutlet } from '@ionic/react';
+import { IonIcon } from '@ionic/react';
 import { checkmarkCircle, closeCircle } from 'ionicons/icons';
 import "./ListImagesComponent.css";
 
