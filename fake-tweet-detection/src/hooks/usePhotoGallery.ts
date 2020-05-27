@@ -8,7 +8,7 @@ import { CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirec
 const PHOTO_STORAGE = "photos";
 
 
-
+//code from Ionic Photo gallery tutorial with slight modifications
 export default function usePhotoGallery() {
 
     const [photos, setPhotos] = useState<Photo[]>([]);
@@ -52,10 +52,12 @@ export default function usePhotoGallery() {
           : JSON.stringify(newPhotos.map(p => {
             // Don't save the base64 representation of the photo data, 
             // since it's already saved on the Filesystem
-            const photoCopy = { ...p };
-            delete photoCopy.base64;
-            return photoCopy;
+            //CHANGING THIS, need base64
+             const photoCopy = { ...p };
+             delete photoCopy.base64;
+            return photoCopy.base64;
           })));
+          
   
     };
   
@@ -81,6 +83,7 @@ export default function usePhotoGallery() {
         // already loaded into memory
         // DO NOT want to do this because we must send over the bindary data file
         return {
+          // binaryDataFile: savedFile,
           filepath: fileName,
           webviewPath: photo.webPath
         };

@@ -24,29 +24,40 @@ class Tab1 extends Component{
   constructor(props) {
     super(props)
 
-    this.handlePhotoChange = this.handlePhotoChange.bind(this)
   }
   state = {
     title: 'default',
     content: '',
     image: null,
+    photoTaken: false,
     submit: true,
     photos: null
   };
   
   componentDidUpdate(prevProps) {
-      // Typical usage (don't forget to compare props):
       if (this.props.photos !== prevProps.photos) {
         this.setState({
-          image:this.props.photos[0]
+          image:this.props.photos[0],
+          photoTaken: true
         })
       }
     }
+    componentDidMount() {
+      this.setState({
+        photoTaken: false
+      })
+      //this.handleImageChange();
+    }
+ 
+
   handleChange = (e) => {
-    
-    this.setState({
-      [e.target.id]: e.target.value
-    });
+    if(this.state.photoTaken){
+      console.log(this.state.image);
+    } else{
+      this.setState({
+        [e.target.id]: e.target.value
+      });
+    }
     this.setState(prevState => ({
       submit: !prevState.submit
     }));
@@ -61,17 +72,7 @@ class Tab1 extends Component{
     })
    
   };
-  
-    //     this.fetchData(this.props.photos);
-    //   }
-  handlePhotoChange = (photos) => {
-    debugger;
-    // if (this.state.photos !== e.target.photos) {
-    //   this.setState({
-    //     image: e.target.photos
-    //   })
-    // }
-  };
+
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -94,7 +95,7 @@ class Tab1 extends Component{
   };
 
   render() {
-    const { photos, takePhoto} = this.props;
+    const {photos, takePhoto} = this.props;
     debugger;
     return(
     <IonPage>
